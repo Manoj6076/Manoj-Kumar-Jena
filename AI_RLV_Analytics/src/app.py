@@ -1,10 +1,15 @@
 import streamlit as st
 import pandas as pd
+from pathlib import Path
 
 st.title("RLV Telemetry Anomaly Analytics")
 
-data = pd.read_csv("AI_RLV_Analytics/data/rlv_telemetry.csv")
+BASE_DIR = Path(__file__).resolve().parent.parent
+data_path = BASE_DIR / "data" / "telemetry.csv"
 
-st.write(data.head())
+data = pd.read_csv(data_path)
+
+st.dataframe(data.head())
+
 
 
