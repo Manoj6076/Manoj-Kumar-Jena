@@ -3,33 +3,36 @@ import pandas as pd
 from sklearn.ensemble import IsolationForest
 import matplotlib.pyplot as plt
 
-st.title("🚀 RLV Telemetry Anomaly Analytics Dashboard")
+st.title("🚀 RLV Telemetry Anomaly Analytics")
 
 # Load dataset
-data = pd.read_csv("data/telemetry.csv")
+data = pd.read_csv("AI_RLV_Analytics/data/rlv_telemetry.csv")
 
-st.subheader("Telemetry Dataset")
+# 1️⃣ Telemetry dataset preview
+st.subheader("Telemetry Dataset Preview")
 st.dataframe(data.head())
 
 # Train anomaly detection model
 model = IsolationForest(contamination=0.05)
 model.fit(data)
 
+# 2️⃣ Run Anomaly Detection button
 if st.button("Run Anomaly Detection"):
-    
+
+    # 3️⃣ ML model predictions
     prediction = model.predict(data)
     data["Anomaly"] = prediction
-    
-    st.subheader("Anomaly Detection Result")
+
+    st.subheader("Prediction Results")
     st.write(data)
 
-    # Graph visualization
-    st.subheader("Altitude vs Velocity")
+    # 4️⃣ Altitude vs Velocity anomaly graph
+    st.subheader("Altitude vs Velocity Anomaly Graph")
 
-    fig, ax = plt.subplots()
-    
     normal = data[data["Anomaly"] == 1]
     anomaly = data[data["Anomaly"] == -1]
+
+    fig, ax = plt.subplots()
 
     ax.scatter(normal["Altitude"], normal["Velocity"], label="Normal")
     ax.scatter(anomaly["Altitude"], anomaly["Velocity"], label="Anomaly")
