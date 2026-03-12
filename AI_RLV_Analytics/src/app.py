@@ -1,15 +1,16 @@
 import streamlit as st
 import pandas as pd
-from pathlib import Path
+import os
 
 st.title("RLV Telemetry Anomaly Analytics")
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-data_path = BASE_DIR / "data" / "telemetry.csv"
+# Get project root directory
+BASE_DIR = os.getcwd()
 
+# Dataset path
+data_path = os.path.join(BASE_DIR, "data", "telemetry.csv")
+
+# Read dataset
 data = pd.read_csv(data_path)
 
 st.dataframe(data.head())
-
-
-
