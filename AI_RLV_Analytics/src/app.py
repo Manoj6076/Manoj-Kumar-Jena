@@ -1,9 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.title("AI RLV Anomaly Detection System")
-
-st.write("Telemetry Data Analysis")
+st.title("AI RLV Anomaly Detection")
 
 data = pd.read_csv("data/telemetry.csv")
 
