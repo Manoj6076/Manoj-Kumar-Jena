@@ -5,53 +5,39 @@ import matplotlib.pyplot as plt
 
 st.title("🚀 RLV Telemetry Anomaly Analytics Dashboard")
 
-# Load dataset
-data = pd.read_csv("AI_RLV_Analytics/data/rlv_telemetry.csv")
+# Upload dataset instead of fixed path
+uploaded_file = st.file_uploader("Upload Telemetry Dataset", type=["csv"])
 
-# Dataset preview
-st.subheader("Telemetry Dataset Preview")
-st.dataframe(data.head())
+if uploaded_file is not None:
 
-# Train anomaly detection model
-model = IsolationForest(contamination=0.05)
-model.fit(data)
+    data = pd.read_csv(uploaded_file)
 
-# Run detection button
-if st.button("Run Anomaly Detection"):
+    st.subheader("Telemetry Dataset Preview")
+    st.dataframe(data.head())
 
-    prediction = model.predict(data)
-    data["Anomaly"] = prediction
+    model = IsolationForest(contamination=0.05)
+    model.fit(data)
 
-    st.subheader("Prediction Results")
-    st.write(data)
+    if st.button("Run Anomaly Detection"):
 
-    # Count anomalies
-    anomaly_count = (data["Anomaly"] == -1).sum()
+        prediction = model.predict(data)
+        data["Anomaly"] = prediction
 
-    st.metric("Detected Anomalies", anomaly_count)
+        st.subheader("Prediction Result")
+        st.write(data)
 
-    # Altitude vs Velocity graph
-    st.subheader("Altitude vs Velocity Anomaly Graph")
+        st.subheader("Altitude vs Velocity Graph")
 
-    normal = data[data["Anomaly"] == 1]
-    anomaly = data[data["Anomaly"] == -1]
+        normal = data[data["Anomaly"] == 1]
+        anomaly = data[data["Anomaly"] == -1]
 
-    fig, ax = plt.subplots()
+        fig, ax = plt.subplots()
 
-    ax.scatter(normal["Altitude"], normal["Velocity"], label="Normal")
-    ax.scatter(anomaly["Altitude"], anomaly["Velocity"], label="Anomaly")
+        ax.scatter(normal["Altitude"], normal["Velocity"], label="Normal")
+        ax.scatter(anomaly["Altitude"], anomaly["Velocity"], label="Anomaly")
 
-    ax.set_xlabel("Altitude")
-    ax.set_ylabel("Velocity")
-    ax.legend()
+        ax.set_xlabel("Altitude")
+        ax.set_ylabel("Velocity")
+        ax.legend()
 
-    st.pyplot(fig)
-
-    # Temperature chart
-    st.subheader("Temperature Trend")
-    st.line_chart(data["Temperature"])
-
-    # Vibration chart
-    st.subheader("Vibration Trend")
-    st.line_chart(data["Vibration"])
-    
+        st.pyplot(fig)
