@@ -31,7 +31,7 @@ This project provides:
 
 After running the application locally, access it at:
 
-https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/
+[https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/](https://rlv-anomaly-dashboard.streamlit.app/)
 
 ------------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/
 
 User (Browser)
       ↓
-Streamlit URL (https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/)
+Streamlit URL ([https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/](https://rlv-anomaly-dashboard.streamlit.app/))
       ↓
 Streamlit Server (src/app.py)
       ↓
@@ -57,7 +57,7 @@ Visualization & Results Layer
 (Metrics, Graphs, Anomaly Table, Download Button)
       ↓
 Response Sent Back to Browser
-(https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/)
+([https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/](https://rlv-anomaly-dashboard.streamlit.app/))
 ------------------------------------------------------------------------
 
 ## Architecture Explanation
@@ -112,7 +112,7 @@ streamlit run src/app.py
 
 Open browser:
 
-https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/
+[https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/](https://rlv-anomaly-dashboard.streamlit.app/)
 
 ------------------------------------------------------------------------
 
