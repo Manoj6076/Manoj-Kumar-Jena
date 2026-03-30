@@ -1,166 +1,170 @@
-# RLV Telemetry Anomaly Analytics
+# 🚀 RLV Telemetry Anomaly Analytics
 
-### Reusable Launch Vehicle Safety Monitoring Dashboard
+### 🛰️ Reusable Launch Vehicle Safety Monitoring Dashboard
 
-An interactive Machine Learning--powered anomaly detection system built
-using Streamlit to analyze Reusable Launch Vehicle (RLV) telemetry data
-and assist in post-flight safety decisions.
+An interactive **Machine Learning–powered anomaly detection system** built using **Streamlit** to analyze Reusable Launch Vehicle (RLV) telemetry data and assist in post-flight safety decisions.
 
-------------------------------------------------------------------------
+---
 
-## Project Overview
+## 🌐 Live Application
 
-Reusable Launch Vehicles generate large volumes of telemetry data such
-as:
+👉 **Access the Dashboard:**
+🔗 https://rlv-anomaly-dashboard.streamlit.app/
 
--   Temperature\
--   Pressure\
--   Vibration
+---
 
-This project provides:
+## 📌 Project Overview
 
--   Telemetry CSV upload\
--   Isolation Forest anomaly detection\
--   Interactive visualization dashboard\
--   Safety decision engine\
--   Downloadable anomaly report
+Reusable Launch Vehicles generate large volumes of telemetry data such as:
 
-------------------------------------------------------------------------
+* 🌡️ Temperature
+* ⚙️ Pressure
+* 📳 Vibration
 
-## Application Output
+### 🔍 This project provides:
 
-After running the application locally, access it at:
+* 📂 Telemetry CSV upload
+* 🤖 Isolation Forest anomaly detection
+* 📊 Interactive visualization dashboard
+* 🧠 Safety decision engine
+* ⬇️ Downloadable anomaly report
 
-[https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/](https://rlv-anomaly-dashboard.streamlit.app/)
+---
 
-------------------------------------------------------------------------
+## 🏗️ System Architecture
 
+### 🔄 Runtime Flow
 
-#  Updated System Architecture
+```
+👤 User (Browser)
+        ↓
+🌐 Streamlit Web App
+        ↓
+🖥️ Streamlit Server (app.py)
+        ↓
+📊 Data Processing Layer
+(Pandas, NumPy, StandardScaler)
+        ↓
+🤖 Machine Learning Model
+(Isolation Forest)
+        ↓
+📈 Visualization Layer
+(Metrics, Graphs, Reports)
+        ↓
+📤 Output to User
+```
 
+---
 
-## Runtime Architecture Flow
+## 🧠 Architecture Explanation
 
-User (Browser)
-      ↓
-Streamlit URL ([[https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/](https://rlv-anomaly-dashboard.streamlit.app/)]([https://rlv-anomaly-dashboard.streamlit.app/](https://rlv-anomaly-dashboard.streamlit.app/)))
-      ↓
-Streamlit Server (src/app.py)
-      ↓
-Data Processing Layer
-(Pandas, NumPy, Feature Selection, StandardScaler)
-      ↓
-Machine Learning Model
-(Isolation Forest - Anomaly Detection)
-      ↓
-Visualization & Results Layer
-(Metrics, Graphs, Anomaly Table, Download Button)
-      ↓
-Response Sent Back to Browser
-([https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/](https://rlv-anomaly-dashboard.streamlit.app/))
-------------------------------------------------------------------------
+1. 👤 User accesses dashboard via browser
+2. 🖥️ Streamlit handles UI & interactions
+3. 📊 Data processed using Pandas & NumPy
+4. ⚖️ Features scaled using StandardScaler
+5. 🤖 Isolation Forest detects anomalies
+6. 📈 Results visualized in dashboard
+7. 🧠 Safety decision generated
+8. 📤 Output returned dynamically
 
-## Architecture Explanation
+---
 
-1.  User accesses the dashboard through a browser.
-2.  Streamlit server handles UI rendering and user interactions.
-3.  Data is processed using Pandas and NumPy.
-4.  Features are scaled using StandardScaler.
-5.  Isolation Forest detects anomalies.
-6.  Metrics and graphs are displayed.
-7.  Safety decision is generated.
-8.  Results are returned to the browser dynamically.
+## 🤖 Machine Learning Model
 
-------------------------------------------------------------------------
+### 🔍 Isolation Forest (Unsupervised Learning)
 
-# Machine Learning Model
+### ✅ Why Isolation Forest?
 
-Isolation Forest (Unsupervised Anomaly Detection)
+* ❌ No labeled data required
+* ⚡ Efficient for large datasets
+* 🎯 Detects rare anomalies
+* 🚀 Ideal for telemetry monitoring
 
-Why Isolation Forest?
+---
 
--   No labeled data required\
--   Efficient for high-dimensional datasets\
--   Detects rare abnormal observations\
--   Suitable for telemetry anomaly detection
+## 🧠 Safety Decision Logic
 
-------------------------------------------------------------------------
+```
+If anomaly_rate < 0.03
+    ✅ Vehicle SAFE for Reuse
+Else
+    ⚠️ Further Inspection Required
+```
 
-# Safety Decision Logic
+---
 
-If anomaly_rate \< 0.03\
-Vehicle Safe for Reuse\
-Else\
-Further Inspection Required
+## ⚙️ How to Run the Project
 
-------------------------------------------------------------------------
+### 📥 Clone Repository
 
-# How to Run the Project
+```bash
+git clone https://github.com/Manoj6076/Manoj-Kumar-Jena
+cd AI_RLV_Analytics
+```
 
-## Clone Repository
+### 📦 Install Dependencies
 
-git clone `<https://github.com/Manoj6076/Manoj-Kumar-Jena>`{=html}\
-cd `<C:\Users\manoj\AI_RLV_Analytics>`{=html}
-
-## Install Dependencies
-
+```bash
 pip install -r requirements.txt
+```
 
-## Run Streamlit Application
+### ▶️ Run Application
 
+```bash
 streamlit run src/app.py
+```
 
-Open browser:
+---
 
-[https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/](https://rlv-anomaly-dashboard.streamlit.app/)
+## 📦 Requirements
 
-------------------------------------------------------------------------
-
-# requirements.txt
-
-streamlit\
-pandas\
-numpy\
-matplotlib\
+```
+streamlit
+pandas
+numpy
+matplotlib
 scikit-learn
+```
 
-------------------------------------------------------------------------
+---
 
-# Demo
+## 📸 Demo
 
+🚀 Live Demo Available:
+https://rlv-anomaly-dashboard.streamlit.app/
 
+---
 
-------------------------------------------------------------------------
+## 🌍 Applications
 
-# Applications
+* 🛰️ Aerospace vehicle health monitoring
+* 🚀 Launch vehicle reuse assessment
+* 🔧 Predictive maintenance
+* 🌐 Industrial IoT anomaly detection
 
--   Aerospace vehicle health monitoring\
--   Launch vehicle reuse assessment\
--   Predictive maintenance\
--   Industrial IoT anomaly detection
+---
 
-------------------------------------------------------------------------
+## 👨‍💻 Author
 
-# Author
+**Manoj Kumar Jena**
+🎓 Advanced School Of Advanced Computing (2025–27)
 
-Manoj Kumar Jena\
-Advanced School Of Advanced Computing\
-2025-27
+---
 
-------------------------------------------------------------------------
+## 📜 License
 
-# License
+This project is developed for **academic and educational purposes**.
 
-This project is developed for academic and educational purposes.
+---
 
-------------------------------------------------------------------------
+## 🎯 Final Project Highlights
 
-# Final Project Summary
+✔ End-to-end Machine Learning pipeline
+✔ Real-time anomaly detection
+✔ Interactive Streamlit dashboard
+✔ Aerospace-inspired safety system
+✔ Fully GitHub + Deployment ready
 
-This project demonstrates:
+---
 
--   End-to-end Machine Learning pipeline\
--   Real-time anomaly detection\
--   Interactive Streamlit dashboard\
--   Aerospace-inspired safety decision system\
--   Complete GitHub-ready structure
+💡 *Built with ❤️ using Python, Machine Learning & Streamlit*
