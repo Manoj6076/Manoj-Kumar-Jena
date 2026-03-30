@@ -43,7 +43,7 @@ After running the application locally, access it at:
 
 User (Browser)
       ↓
-Streamlit URL ([https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/](https://rlv-anomaly-dashboard.streamlit.app/))
+Streamlit URL ([[https://manoj-kumar-jena-cst6wcj4zhbfjpboychqgn.streamlit.app/](https://rlv-anomaly-dashboard.streamlit.app/)]([https://rlv-anomaly-dashboard.streamlit.app/](https://rlv-anomaly-dashboard.streamlit.app/)))
       ↓
 Streamlit Server (src/app.py)
       ↓
